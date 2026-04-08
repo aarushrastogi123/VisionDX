@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
+  // API URL from environment or default to localhost
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+
   const [image, setImage] = useState(null);
   const [preview, setPreview] = useState(null);
   const [result, setResult] = useState(null);
@@ -43,7 +46,7 @@ function App() {
       const formData = new FormData();
       formData.append("file", image);
 
-      const resp = await fetch("http://localhost:8000/predict", {
+      const resp = await fetch(`${API_URL}/predict`, {
         method: "POST",
         body: formData,
       });
