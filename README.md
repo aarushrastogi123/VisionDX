@@ -39,7 +39,7 @@ The system predicts one of several retinal conditions from fundus images and ret
   - `models/class_names.txt`
 
 ## Requirements
-
+ 
 ### Python
 
 - Python 3.10+ recommended
